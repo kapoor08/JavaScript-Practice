@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Picture Upload</title>
+    <style>
+        /* Style the custom button */
+        .custom-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hide the default file input */
+        #avatar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="profile-form">
+        <!-- Custom button to trigger file input -->
+        <label for="avatar" class="custom-button">Choose a profile picture</label>
+        
+        <!-- Hidden file input -->
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg, image/jpg" style="display: none;" />
+        
+        <!-- Image element to display the selected image -->
+        <img id="preview" src="" alt="Profile" style="max-width: 300px; display: none;" />
+    </form>
+
+    <script>
+        // Get references to the necessary elements
+        const fileInput = document.getElementById('avatar');
+
+        // Add an event listener to the custom button to trigger the file input
+        const customButton = document.querySelector('.custom-button');
+        customButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // ... Rest of your JavaScript code for handling file selection and preview
+    </script>
+</body>
+</html>

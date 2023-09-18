@@ -1,0 +1,46 @@
+.container{
+    text-align: center;
+    width: 30rem;
+    height: 13rem;
+    background-color: #f2f2f2;
+    box-shadow: 10px 10px 6px 6px #dcdbdb;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+h2{
+    padding-top: 35px;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input{
+    width: 45%;
+    border: 1px solid black;
+}
+.submit{
+    margin-top: 10px;
+    width: 20%;
+    cursor: pointer;
+}
+button{
+    margin-top: 10px;
+}
+table{
+    border-collapse: collapse;
+}
+table,tr,td{
+    border: 1px solid black;
+}
+th,td{
+    padding: 8px;
+    text-align: center;
+}
+td{
+    width: 31px;
+    height: 31px;
+    text-align: center;
+    border: 1px solid black;
+}

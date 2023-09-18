@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .add-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 7px;
+        }
+        input:focus{
+            outline: none;
+        }
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="text" class="input-field"></td>
+            <td><button class="add-button" onclick="addColumn(this)">Add</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function addColumn(button) {
+            const table = document.querySelector('table');
+            const rows = table.querySelectorAll('tr');
+
+            if (rows.length === 2) {
+                const firstRow = rows[0];
+                const firstCell = firstRow.lastElementChild;
+                const firstInputCell = firstRow.firstElementChild;
+                firstRow.removeChild(firstCell);
+            }
+
+            // Change the "Add" button to a "Delete" button in the previous column
+            const lastRow = rows[rows.length - 1];
+            const lastCell = lastRow.lastElementChild;
+            const addButton = lastCell.querySelector('.add-button');
+            addButton.innerText = 'Delete';
+            addButton.className = 'delete-button';
+            addButton.onclick = function () {
+                deleteColumn(this);
+            };
+
+            // Add a new column with an input box and an "Add" button
+            const newRow = document.createElement('tr');
+            const newInputCell = document.createElement('td');
+            const newButtonCell = document.createElement('td');
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.className = 'input-field';
+            newButtonCell.innerHTML = '<button class="add-button" onclick="addColumn(this)">Add</button>';
+            
+            newInputCell.appendChild(newInput);
+            newRow.appendChild(newInputCell);
+            newRow.appendChild(newButtonCell);
+            table.appendChild(newRow);
+        }
+
+        function deleteColumn(button) {
+            const table = document.querySelector('table');
+            const rows = table.querySelectorAll('tr');
+            
+            if (rows.length >= 1) {
+                const rowToDelete = button.parentElement.parentElement;
+                if (rows.length === 2) {
+                    // If there are only two rows, remove the "Delete" button and re-add the "Add" button to the first row
+                    const firstRow = rows[0];
+                    const firstCell = firstRow.lastElementChild;
+                    const addButton = firstCell.querySelector('.delete-button');
+                    addButton.innerText = 'Add';
+                    addButton.className = 'add-button';
+                    addButton.onclick = function () {
+                        addColumn(this);
+                    };
+                }
+                table.removeChild(rowToDelete);
+            } else {
+                alert("You can't delete the last column.");
+            }
+        }
+    </script>
+
+</body>
+</html>

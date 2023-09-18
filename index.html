@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+            text-align: center;
+        }
+        table{
+            width: 60%;
+        }
+        .lunch{
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th colspan="6">Time Table</th>
+            </tr>
+            <tr>
+                <th rowspan="6">Hours</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+            </tr>
+            <tr>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td>Arts</td>
+            </tr>
+            <tr>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td>Arts</td>
+            </tr>
+            <tr>
+                <td colspan="5" class="lunch">LUNCH</td>
+            </tr>
+            <tr>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td rowspan="2">Project</td>
+            </tr>
+            <tr>
+                <td>Computer</td>
+                <td>Maths</td>
+                <td>Computer</td>
+                <td>Maths</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <link rel="stylesheet" href="task6.css">
+</head>
+<body>
+<h2>Data Entry Table Using JavaScript</h2>
+<table class="input-box">
+    <tr>
+        <td><input type="text" class="input-field" id="new-data-input" /></td>
+        <td>
+            <button class="add-button" onclick="addColumn()">Add</button>
+        </td>
+    </tr>
+</table>
+
+<table id="data-table">
+    <tr>
+        <th>Data</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<script src="task6.js"></script>
+</body>
+</html>

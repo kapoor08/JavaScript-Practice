@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Sort Table</title>
+    <!-- <link rel="stylesheet" href="sortData.css"> -->
+    <style>
+      #thead th span {
+        display: none;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #191919">
+    <div class="container">
+      <h2 style="color: #fff; margin: 4rem 1rem 1rem 22rem">
+        Sortable List Table
+      </h2>
+      <table
+        id="data-table"
+        class="table table-dark table-striped table-bordered mt-5"
+      >
+        <thead id="thead">
+          <tr id="thead-row">
+            <th data-column-name="name" class="w-50">
+              Name <span class="mx-2">&#8964;</span>
+            </th>
+            <th data-column-name="dial_code">
+              Dial_Code <span class="mx-2">&#8964;</span>
+            </th>
+            <th data-column-name="code">
+              Code<span class="mx-2">&#8964;</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>Denmark</td> <td>+45</td> <td>DK</td>
+            </tr>
+            <tr>
+                <td>Angola</td> <td>+244</td> <td>AO</td>
+            </tr>
+            <tr>
+                <td>Azerbaijan</td> <td>+994</td> <td>AZ</td>
+            </tr>
+            <tr>
+                <td>Eritrea</td> <td>+291</td> <td>ER</td>
+            </tr>
+            <tr>
+                <td>Greece</td> <td>+30</td> <td>GR</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+        const tbody = document.getElementById("tbody");
+        const theaders = document.getElementById("thead")
+        const thRow = Array.from(theaders.querySelector("tr"));
+        const theadData = theaders.querySelectorAll("tr th");
+        const tbodyData = Array.from(tbody.querySelectorAll("tr"));
+
+        function sortTable(){
+            const dataCols = tbody.map(row => row.querySelectorAll("td"));
+            
+        }
+
+        function handleHeader(){
+            sortTable();
+        }
+        
+        thRow.forEach(()=>{
+            theadData.addEventListener("click", handleHeader);
+        })
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

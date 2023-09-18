@@ -1,0 +1,77 @@
+body {
+    background-color:cornflowerblue;
+}
+
+h2 {
+    text-align: center;
+    margin: 4rem auto 2rem auto;
+    color: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #fff;
+}
+
+table,
+th,
+td {
+    /* border: 1px solid #eee; */
+    border-radius: 10px;
+}
+
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+td {
+    width: 55%;
+}
+
+th {
+    background-color: #fff;
+}
+
+.input-box {
+    margin-left: 35%;
+    width: 30%;
+}
+
+input {
+    width: 83%;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+}
+
+.add-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+#data-table {
+    margin-top: 3%;
+    margin-left: 11%;
+}

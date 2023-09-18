@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+    <link rel="stylesheet" href="demo.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Dynamic Data Form</h2>
+      <form id="submitForm">
+
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email" >Email*</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password*</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="cpassword">Confirm Password*</label>
+        <input id="cpassword" name="password" type="password" required />
+
+        <div id="gender">
+          <label id="gender">Gender*</label>
+          <input type="radio" name="gender" value="Male">Male
+          <input type="radio" name="gender" value="Female">Female
+        </div>
+
+        <label for="avatar">Choose a profile picture:</label>
+        <img id="image" alt="profile" src="" style="display: none;"/>
+
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg, image/jpg" />
+
+        <button id="submit">Submit</button>
+
+      </form>
+    </div>
+    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear All</button>
+
+    <div id="tableData" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Profile</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>  
+            <tbody id="userData">
+              
+            </tbody>
+        </table>
+    </div>
+    <script src="demo.js"></script>
+  </body>
+</html>
